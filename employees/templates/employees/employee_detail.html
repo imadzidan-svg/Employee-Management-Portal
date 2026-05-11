@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>
+
+    Employee Details
+
+    <a
+        href="/employee/{{ employee.id }}/edit/"
+        class="btn btn-primary"
+    >
+
+        Edit
+
+    </a>
+    <a
+        href="/employee/{{ employee.id }}/delete/"
+        class="btn btn-danger"
+    >
+
+        Delete
+
+    </a>
+
+</h2>
+
+<div class="card p-4">
+
+    <h3>
+
+        {{ employee.first_name }}
+        {{ employee.last_name }}
+
+    </h3>
+
+    <p>
+
+        <strong>Email:</strong>
+        {{ employee.email }}
+
+    </p>
+
+    <p>
+
+        <strong>Department:</strong>
+        {{ employee.department }}
+
+    </p>
+
+    <p>
+
+        <strong>Salary:</strong>
+        {{ employee.salary }}
+
+    </p>
+
+    <p>
+
+        <strong>Hire Date:</strong>
+        {{ employee.hire_date }}
+
+    </p>
+
+</div>
+
+{% if employee.resume %}
+
+    <p>
+
+        <strong>Resume:</strong>
+
+        <a href="{{ employee.resume.url }}">
+
+            Download Resume
+
+        </a>
+
+    </p>
+
+{% endif %}
+
+{% if resume_analysis %}
+
+    <div class="card mt-4 p-4">
+
+        <h4>
+
+            AI Resume Analysis
+
+        </h4>
+
+        <div style="white-space: pre-wrap;">
+
+            {{ resume_analysis }}
+
+        </div>
+
+    </div>
+
+{% endif %}
+
+{% endblock %}

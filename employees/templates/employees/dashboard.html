@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+
+    Dashboard
+
+</h2>
+
+<div class="row">
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h5>Total Employees</h5>
+
+            <h3>{{ total_employees }}</h3>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h5>Departments</h5>
+
+            <h3>{{ departments }}</h3>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h5>Average Salary</h5>
+
+            <h3>{{ average_salary }}</h3>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card p-3">
+
+            <h5>Highest Salary</h5>
+
+            <h3>{{ highest_salary }}</h3>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="card mt-4 p-4">
+
+    <h4>
+
+        AI Workforce Insights
+
+    </h4>
+
+    <div
+        class="mt-3"
+        style="white-space: pre-wrap;"
+    >
+
+        {{ ai_insights }}
+
+    </div>
+
+</div>
+
+{% endblock %}
